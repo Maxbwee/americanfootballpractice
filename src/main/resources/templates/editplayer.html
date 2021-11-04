@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit player</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link type="text/css" rel="stylesheet" th:href="@{../css/bootstrap.min.css}" />
+</head>
+<body>
+<div class="container">
+	<h1>Edit a player</h1>
+	<div class="col-md-4">
+	<form th:object="${player}" th:action="@{../save}" action="#" method="post">
+		
+		<input type="hidden" th:field="*{id}" class="form-control"/>
+		
+		<input type="text" th:field="*{firstName}" class="form-control"
+		placeholder="First Name"/>
+		<div style="clear: both; display: block; height: 15px;"></div>
+		
+		<input type="text" th:field="*{lastName}" class="form-control"
+		placeholder="Last Name"/>
+		<div style="clear: both; display: block; height: 15px;"></div>
+		
+		<input type="text" th:field="*{birthday}" class="form-control"
+		placeholder="Birthday"/>
+		<div style="clear: both; display: block; height: 15px;"></div>
+		
+		<label for="poslist">Position</label>
+		<select id="poslist" th:field="*{position}" class="form-control">
+			<option th:each="position: ${positions}" th:value="${position.positionid}" th:text="${position.role}"> </option>
+		</select>
+		<div style="clear: both; display: block; height: 15px;"></div>
+		
+		<label for="partlist">Participation</label>
+		<select id="partlist" th:field="*{participation}" class="form-control">
+			<option th:each="participation: ${participations}" th:value="${participation.participationid}" th:text="${participation.answer}"> </option>
+		</select>
+		
+		<hr>
+		<input type="submit" class="btn btn-primary" value="Save"></input>
+		
+	
+		</form>
+	</div>
+</div>
+</body>
+</html>

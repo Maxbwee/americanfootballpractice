@@ -1,0 +1,32 @@
+
+table, th, td {
+ 
+  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header {
+  padding: 10px;
+  text-align: center;
+  background: black;
+  color: white;
+  font-size: 15px;
+}
+
+h1 {
+	text-align: center;
+}
+
+.logout {
+	text-align: center;
+	padding: 30px;
+}
+
+.center {
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+ 	background: black;
+ 	width: 15%;
+}
